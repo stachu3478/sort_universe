@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1583352458 source:c:\users\stach\desktop\repo\sort_universe\array_generators\random\random.cpp
+	<stdlib.h>
+	<cstdio>
+
+1583351611 source:c:\users\stach\desktop\repo\sort_universe\main.cpp
+	<iostream>
+	"test_suite.h"
+
+1583351499 source:c:\users\stach\desktop\repo\sort_universe\test_suite.cpp
+
+1583354186 c:\users\stach\desktop\repo\sort_universe\test_suite.h
+	<iostream>
+	<stdlib.h>
+	"array_generators/random/random_test.h"
+	"array_generators/down_to_up/down_to_up_test.h"
+
+1583352755 c:\users\stach\desktop\repo\sort_universe\array_generators\random\random_test.h
+	<iostream>
+	"random.h"
+	"../utils/is_acc_number_of_int.h"
+
+1583350275 c:\users\stach\desktop\repo\sort_universe\array_generators\random\random.h
+
+1583352647 c:\users\stach\desktop\repo\sort_universe\array_generators\utils\is_acc_number_of_int.h
+
+1583354826 source:c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up.cpp
+	<bits/stdc++.h>
+
+1583355387 c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up_test.h
+	<iostream>
+	"down_to_up.h"
+	"../utils/is_acc_number_of_int.h"
+
+1583353944 c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up.h
+
