@@ -1,32 +1,32 @@
-#ifndef DOWN_TO_UP_TEST_H_INCLUDED
-#define DOWN_TO_UP_TEST_H_INCLUDED
+#ifndef UP_TO_DOWN_TEST_H_INCLUDED
+#define UP_TO_DOWN_TEST_H_INCLUDED
 
 #include <iostream>
-#include "down_to_up.h"
+#include "up_to_down.h"
 #include "../utils/is_acc_number_of_int.h"
 
 ;using namespace std;
 
-int down_to_up_test()
+int up_to_down_test()
 {
     int* arr;
-    cout << "> Down to up array with length of 100" << endl;
+    cout << "> Up to down array with length of 100" << endl;
     cout << "Is accessible number of integers" << endl;
-    if(is_accessible_number_of_integers(down_to_up(100, 1), 100))
+    if(is_accessible_number_of_integers(up_to_down(100, 1), 100))
         return 1;
-    cout << "Has increasing elements at one face" << endl; // FIXME
-    arr = down_to_up(100, 1);
+    cout << "Has decreasing elements at one face" << endl; // FIXME
+    arr = up_to_down(100, 1);
     int curr = arr[0];
     for (int i = 0; i < 100; i++)
     {
         cout << arr[i] << endl;
-        if (curr > arr[i])
+        if (curr < arr[i])
             return 1;
         else
             curr = arr[i];
     }
     // TODO
-    /* cout << "Gets increasing elements at multiple faces (5) with no modulo" << endl;
+    /* cout << "Gets decreasing elements at multiple faces (5) with no modulo" << endl;
     arr = down_to_up(100, 5);
     for (int pos = 0; pos < 100; pos += 20)
     {
@@ -43,7 +43,7 @@ int down_to_up_test()
         if (arr[pos - 1] < arr[pos])
             return 1;
     }
-    cout << "Gets increasing elements at multiple faces (6) with modulo" << endl;
+    cout << "Gets decreasing elements at multiple faces (6) with modulo" << endl;
     arr = down_to_up(100, 6);
     for (int pos = 0; pos < 100; pos += 16)
     {
@@ -67,4 +67,4 @@ int down_to_up_test()
     return 0;
 }
 
-#endif // DOWN_TO_UP_TEST_H_INCLUDED
+#endif // UP_TO_DOWN_TEST_H_INCLUDED

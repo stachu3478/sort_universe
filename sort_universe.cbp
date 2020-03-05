@@ -32,6 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="array_generators/a_shaped/a_shaped.cpp" />
+		<Unit filename="array_generators/a_shaped/a_shaped.h" />
+		<Unit filename="array_generators/a_shaped/a_shaped_test.h">
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="array_generators/down_to_up/down_to_up.cpp" />
 		<Unit filename="array_generators/down_to_up/down_to_up.h" />
 		<Unit filename="array_generators/down_to_up/down_to_up_test.h">
@@ -42,7 +47,22 @@
 		<Unit filename="array_generators/random/random_test.h">
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="array_generators/single_value/single_value.cpp" />
+		<Unit filename="array_generators/single_value/single_value.h" />
+		<Unit filename="array_generators/single_value/single_value_test.h">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="array_generators/up_to_down/up_to_down.cpp" />
+		<Unit filename="array_generators/up_to_down/up_to_down.h" />
+		<Unit filename="array_generators/up_to_down/up_to_down_test.h">
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="array_generators/utils/is_acc_number_of_int.h">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="array_generators/v_shaped/v_shaped.cpp" />
+		<Unit filename="array_generators/v_shaped/v_shaped.h" />
+		<Unit filename="array_generators/v_shaped/v_shaped_test.h">
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="main.cpp" />
