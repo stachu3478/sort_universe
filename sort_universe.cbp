@@ -66,10 +66,23 @@
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="main.cpp" />
+		<Unit filename="sort_algorithms/insertion/insertion.cpp" />
+		<Unit filename="sort_algorithms/insertion/insertion.h" />
+		<Unit filename="sort_algorithms/selection/selection.cpp" />
+		<Unit filename="sort_algorithms/selection/selection.h" />
+		<Unit filename="sort_algorithms/sort_test.h">
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="test_suite.cpp">
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="test_suite.h">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="utils/copy_array.h">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="utils/is_down_to_up.h">
 			<Option target="Debug" />
 		</Unit>
 		<Extensions>

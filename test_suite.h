@@ -9,19 +9,20 @@
 #include "array_generators/single_value/single_value_test.h"
 #include "array_generators/a_shaped/a_shaped_test.h"
 #include "array_generators/v_shaped/v_shaped_test.h"
+#include "sort_algorithms/sort_test.h"
 
 using namespace std;
 
-int checkFail(int state, int newState)
+void checkFail(int state, int newState)
 {
     if (!state)
     {
         if (newState)
         {
             cout << "FAIL" << endl;
-        }
-    }
-}
+        };
+    };
+};
 
 int test_suite()
 {
@@ -34,11 +35,12 @@ int test_suite()
         checkFail(result, result += single_value_test());
         checkFail(result, result += a_shaped_test());
         checkFail(result, result += v_shaped_test());
+        checkFail(result, result += sort_test());
     }
     catch (...) {
         cout << "FAIL" << endl;
         return -1;
-    }
+    };
 
     if (!result)
     {

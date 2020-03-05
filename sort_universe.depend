@@ -34,15 +34,15 @@
 
 1583353944 c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up.h
 
-1583392285 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\random\random.cpp
+1583406286 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\random\random.cpp
 	<stdlib.h>
 	<cstdio>
 
-1583393329 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\main.cpp
+1583410556 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\main.cpp
 	<iostream>
 	"test_suite.h"
 
-1583395815 c:\users\stach\onedrive\pulpit\repo\sort_universe\test_suite.h
+1583410505 c:\users\stach\onedrive\pulpit\repo\sort_universe\test_suite.h
 	<iostream>
 	<stdlib.h>
 	"array_generators/random/random_test.h"
@@ -51,20 +51,22 @@
 	"array_generators/single_value/single_value_test.h"
 	"array_generators/a_shaped/a_shaped_test.h"
 	"array_generators/v_shaped/v_shaped_test.h"
+	"sort_algorithms/sort_test.h"
 
-1583392285 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\random\random_test.h
+1583406274 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\random\random_test.h
 	<iostream>
 	"random.h"
 	"../utils/is_acc_number_of_int.h"
 
 1583392285 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\random\random.h
 
-1583392285 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\utils\is_acc_number_of_int.h
+1583409192 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\utils\is_acc_number_of_int.h
 
-1583393262 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\down_to_up\down_to_up_test.h
+1583410469 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\down_to_up\down_to_up_test.h
 	<iostream>
 	"down_to_up.h"
 	"../utils/is_acc_number_of_int.h"
+	"../../utils/is_down_to_up.h"
 
 1583392285 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\down_to_up\down_to_up.h
 
@@ -81,7 +83,7 @@
 	<bits/stdc++.h>
 	"up_to_down.h"
 
-1583393206 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\down_to_up\down_to_up.cpp
+1583406321 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\down_to_up\down_to_up.cpp
 	<bits/stdc++.h>
 	"down_to_up.h"
 
@@ -96,10 +98,11 @@
 	"single_value.h"
 	"../utils/is_acc_number_of_int.h"
 
-1583395594 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\a_shaped\a_shaped_test.h
+1583406625 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\a_shaped\a_shaped_test.h
 	<iostream>
 	"a_shaped.h"
 	"../utils/is_acc_number_of_int.h"
+	"../../utils/is_down_to_up.h"
 
 1583395582 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\a_shaped\a_shaped.h
 
@@ -108,15 +111,40 @@
 	"../down_to_up/down_to_up.h"
 	"../up_to_down/up_to_down.h"
 
-1583396009 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\v_shaped\v_shaped_test.h
+1583406523 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\v_shaped\v_shaped_test.h
 	<iostream>
 	"v_shaped.h"
 	"../utils/is_acc_number_of_int.h"
+	"../../utils/is_down_to_up.h"
 
-1583395983 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\v_shaped\v_shaped.cpp
+1583396014 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\v_shaped\v_shaped.cpp
 	"v_shaped.h"
 	"../down_to_up/down_to_up.h"
 	"../up_to_down/up_to_down.h"
 
 1583395769 c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\v_shaped\v_shaped.h
+
+1583411933 c:\users\stach\onedrive\pulpit\repo\sort_universe\utils\is_down_to_up.h
+	<iostream>
+
+1583410438 c:\users\stach\onedrive\pulpit\repo\sort_universe\sort_algorithms\sort_test.h
+	<iostream>
+	"../array_generators/random/random.h"
+	"../utils/is_down_to_up.h"
+	"../array_generators/utils/is_acc_number_of_int.h"
+	"../utils/copy_array.h"
+	"../sort_algorithms/selection/selection.h"
+	"../sort_algorithms/insertion/insertion.h"
+
+1583407550 c:\users\stach\onedrive\pulpit\repo\sort_universe\sort_algorithms\..
+
+1583407376 c:\users\stach\onedrive\pulpit\repo\sort_universe\sort_algorithms\selection\selection.h
+
+1583410400 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\sort_algorithms\selection\selection.cpp
+
+1583409405 c:\users\stach\onedrive\pulpit\repo\sort_universe\utils\copy_array.h
+
+1583409945 c:\users\stach\onedrive\pulpit\repo\sort_universe\sort_algorithms\insertion\insertion.h
+
+1583410322 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\sort_algorithms\insertion\insertion.cpp
 

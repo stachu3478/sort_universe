@@ -1,6 +1,7 @@
 #ifndef IS_ACC_NUMBER_OF_INT_H_INCLUDED
 #define IS_ACC_NUMBER_OF_INT_H_INCLUDED
 
+// If it is, returns 0, otherwise 1
 int is_accessible_number_of_integers(int* arr, int length)
 {
     for (int i = 0; i < 100; i++)

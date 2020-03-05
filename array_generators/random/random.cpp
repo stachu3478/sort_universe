@@ -7,4 +7,4 @@ int* random_list(int length)
     for (int i = 0; i < length; i++)
         arr[i] = rand();
     return arr;
-}
+};

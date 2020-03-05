@@ -5,6 +5,7 @@
 #include <iostream>
 #include "v_shaped.h"
 #include "../utils/is_acc_number_of_int.h"
+#include "../../utils/is_down_to_up.h"
 
 int v_shaped_test()
 {
@@ -24,15 +25,8 @@ int v_shaped_test()
         else
             curr = arr[i];
     }
-    curr = arr[50];
-    for (int i = 50; i < 100; i++)
-    {
-        cout << arr[i] << endl;
-        if (curr > arr[i])
-            return 1;
-        else
-            curr = arr[i];
-    }
+    if (!is_down_to_up(arr + 50, 50))
+        return 1;
     return 0;
 }
 
