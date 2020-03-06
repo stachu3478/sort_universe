@@ -66,10 +66,16 @@
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="main.cpp" />
+		<Unit filename="sort_algorithms/bubble/bubble.cpp" />
+		<Unit filename="sort_algorithms/bubble/bubble.h" />
 		<Unit filename="sort_algorithms/insertion/insertion.cpp" />
 		<Unit filename="sort_algorithms/insertion/insertion.h" />
+		<Unit filename="sort_algorithms/quick/quick.cpp" />
+		<Unit filename="sort_algorithms/quick/quick.h" />
 		<Unit filename="sort_algorithms/selection/selection.cpp" />
 		<Unit filename="sort_algorithms/selection/selection.h" />
+		<Unit filename="sort_algorithms/shell/shell.cpp" />
+		<Unit filename="sort_algorithms/shell/shell.h" />
 		<Unit filename="sort_algorithms/sort_test.h">
 			<Option target="Debug" />
 		</Unit>

@@ -8,6 +8,9 @@
 #include "../utils/copy_array.h"
 #include "../sort_algorithms/selection/selection.h"
 #include "../sort_algorithms/insertion/insertion.h"
+#include "../sort_algorithms/shell/shell.h"
+#include "../sort_algorithms/quick/quick.h"
+#include "../sort_algorithms/bubble/bubble.h"
 
 using namespace std;
 
@@ -35,13 +38,13 @@ int test_algorithm(int* input_array, int* original, int* output_array, int lengt
                 output_array[j] = -1;
                 found = 1;
                 break;
-            }
+            };
         };
         if (!found)
             return 1;
-    }
+    };
     return 0;
-}
+};
 
 // Here are tested all sort algorithms
 // Elements should be sorted from down to up (e.g. 1, 2, 3)
@@ -53,13 +56,28 @@ int sort_test()
     int* selection_orig = copy_array(selection_in, 100);
     if (test_algorithm(selection_in, selection_orig, selection_sort(selection_in, 100), 100))
         return 1;
-    // cout << "> Insertion sort" << endl; // FIXME
-    // int* insertion_in = random_list(100);
-    // int* insertion_orig = copy_array(insertion_in, 100);
-    // if (test_algorithm(insertion_in, insertion_orig, insertion_sort(insertion_in, 100), 100))
-    //    return 1;
+    cout << "> Insertion sort" << endl;
+    int* insertion_in = random_list(100);
+    int* insertion_orig = copy_array(insertion_in, 100);
+    if (test_algorithm(insertion_in, insertion_orig, insertion_sort(insertion_in, 100), 100))
+        return 1;
+    cout << "> Shell sort | Knuth" << endl;
+    int* shell_in = random_list(100);
+    int* shell_orig = copy_array(shell_in, 100);
+    if (test_algorithm(shell_in, shell_orig, shell_sort(shell_in, 100), 100))
+        return 1;
+    cout << "> Quick sort | Recurences" << endl;
+    int* quick_in = random_list(100);
+    int* quick_orig = copy_array(quick_in, 100);
+    if (test_algorithm(quick_in, quick_orig, quick_sort(quick_in, 100), 100))
+        return 1;
+    cout << "> Bubble sort" << endl;
+    int* bubble_in = random_list(100);
+    int* bubble_orig = copy_array(bubble_in, 100);
+    if (test_algorithm(bubble_in, bubble_orig, bubble_sort(bubble_in, 100), 100))
+        return 1;
 
     return 0;
-}
+};
 
 #endif // SORT_TEST_H_INCLUDED
