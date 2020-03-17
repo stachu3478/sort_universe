@@ -12,10 +12,10 @@ int up_to_down_test()
     int* arr;
     cout << "> Up to down array with length of 100" << endl;
     cout << "Is accessible number of integers" << endl;
-    if(is_accessible_number_of_integers(up_to_down(100, 1), 100))
+    if(is_accessible_number_of_integers(up_to_down(100), 100))
         return 1;
     cout << "Has decreasing elements at one face" << endl; // FIXME
-    arr = up_to_down(100, 1);
+    arr = up_to_down(100);
     int curr = arr[0];
     for (int i = 0; i < 100; i++)
     {

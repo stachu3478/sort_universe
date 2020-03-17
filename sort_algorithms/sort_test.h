@@ -15,8 +15,14 @@
 
 using namespace std;
 
-int test_algorithm(int* input_array, int* original, int* output_array, int length)
+typedef int* sort_algorithm(int* arr, int length);
+
+int test_algorithm(sort_algorithm alg)
 {
+    int length = 100;
+    int* input_array = random_list(length);
+    int* original = copy_array(input_array, length);
+    int* output_array = alg(input_array, length);
     cout << "Is the same array" << endl;
     if (input_array != output_array)
         return 1;
@@ -53,29 +59,22 @@ int sort_test()
 {
     cout << ">> Hello algs!" << endl;
     cout << "> Selection sort" << endl;
-    int* selection_in = random_list(100);
-    int* selection_orig = copy_array(selection_in, 100);
-    if (test_algorithm(selection_in, selection_orig, selection_sort(selection_in, 100), 100))
+    if (test_algorithm(selection_sort))
         return 1;
     cout << "> Insertion sort" << endl;
-    int* insertion_in = random_list(100);
-    int* insertion_orig = copy_array(insertion_in, 100);
-    if (test_algorithm(insertion_in, insertion_orig, insertion_sort(insertion_in, 100), 100))
+    if (test_algorithm(insertion_sort))
         return 1;
     cout << "> Shell sort | Knuth" << endl;
-    int* shell_in = random_list(100);
-    int* shell_orig = copy_array(shell_in, 100);
-    if (test_algorithm(shell_in, shell_orig, shell_sort(shell_in, 100), 100))
+    if (test_algorithm(shell_sort))
         return 1;
-    cout << "> Quick sort | Recurences" << endl;
-    int* quick_in = random_list(100);
-    int* quick_orig = copy_array(quick_in, 100);
-    if (test_algorithm(quick_in, quick_orig, quick_sort(quick_in, 100), 100))
+    cout << "> Quick sort | Right pivot" << endl;
+    if (test_algorithm(quick_sort_right))
+        return 1;
+    cout << "> Quick sort | Random pivot" << endl;
+    if (test_algorithm(quick_sort_rand))
         return 1;
     cout << "> Bubble sort" << endl;
-    int* bubble_in = random_list(100);
-    int* bubble_orig = copy_array(bubble_in, 100);
-    if (test_algorithm(bubble_in, bubble_orig, bubble_sort(bubble_in, 100), 100))
+    if (test_algorithm(bubble_sort))
         return 1;
     // cout << "> Heap sort" << endl;
     // int* heap_in = random_list(100);

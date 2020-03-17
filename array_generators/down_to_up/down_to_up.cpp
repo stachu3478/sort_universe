@@ -18,3 +18,5 @@
 
     return arr;
 };
+
+int* down_to_up(int length) { return down_to_up(length, 1); };

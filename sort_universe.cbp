@@ -94,6 +94,8 @@
 		<Unit filename="utils/is_down_to_up.h">
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="utils/measure.cpp" />
+		<Unit filename="utils/measure.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

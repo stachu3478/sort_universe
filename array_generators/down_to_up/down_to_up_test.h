@@ -12,10 +12,10 @@ int down_to_up_test()
 {
     cout << "> Down to up array with length of 100" << endl;
     cout << "Is accessible number of integers" << endl;
-    if(is_accessible_number_of_integers(down_to_up(100, 1), 100))
+    if(is_accessible_number_of_integers(down_to_up(100), 100))
         return 1;
     cout << "Has increasing elements at one face" << endl;
-    if (!is_down_to_up(down_to_up(100, 1), 100))
+    if (!is_down_to_up(down_to_up(100), 100))
         return 1;
     // TODO
     /* cout << "Gets increasing elements at multiple faces (5) with no modulo" << endl;

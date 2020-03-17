@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include "up_to_down.h"
 
+// Faces not implemented
 int* up_to_down(int length, int faces)
 {
     int elements_per_face = length / faces;
@@ -14,7 +15,9 @@ int* up_to_down(int length, int faces)
     {
         current_max -= rand() % rand_step;
         arr[i] = current_max;
-    }
+    };
 
     return arr;
-}
+};
+
+int* up_to_down(int length) { return up_to_down(length, 1); };
