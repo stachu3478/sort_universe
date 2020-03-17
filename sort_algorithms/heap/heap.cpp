@@ -32,7 +32,7 @@ void heapify(int* arr, int start, int length)
     {
         int left = left_child(i);
         int right = left + 1;
-        int max_val, max_id;
+        int max_id;
         if (right < length)
         {
             if (arr[left] > arr[right])
@@ -45,8 +45,7 @@ void heapify(int* arr, int start, int length)
             max_id = left;
         }
         else return;
-        max_val = arr[max_id];
-        if (max_val > arr[i])
+        if (arr[max_id] > arr[i])
             swapp(arr, max_id, i);
         else return;
         i = max_id;
@@ -55,24 +54,13 @@ void heapify(int* arr, int start, int length)
 
 int* heap_sort(int* arr, int length)
 {
-    for (int i = length; i >= 0; i--)
+    int lmin1 = length - 1;
+    for (int i = parent(lmin1); i >= 0; i--)
         heapify(arr, i, length);
-    int co = 1;
-    int cur = 0;
     for (int i = 0; i < length; i++)
     {
-        cout << arr[i] << " ";
-        if (++cur == co)
-        {
-            cout << endl;
-            co <<= 1;
-            cur = 0;
-        };
-    };
-    for (int i = 0; i < length; i++)
-    {
-        swapp(arr, 0, length - i - 1);
-        heapify(arr, 0, length - i - 2);
+        swapp(arr, 0, lmin1 - i);
+        heapify(arr, 0, lmin1 - i);
     };
     return arr;
 };

@@ -212,7 +212,7 @@
 	"../utils/is_acc_number_of_int.h"
 	"../../utils/is_down_to_up.h"
 
-1584469549 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\sort_test.h
+1584478462 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\sort_test.h
 	<iostream>
 	"../array_generators/random/random.h"
 	"../utils/is_down_to_up.h"
@@ -253,9 +253,9 @@
 
 1583513091 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\bubble\bubble.cpp
 
-1584262420 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\heap\heap.h
+1584478352 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\heap\heap.h
 
-1584361277 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\heap\heap.cpp
+1584486351 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\heap\heap.cpp
 	<iostream>
 	"heap.h"
 
