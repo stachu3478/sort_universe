@@ -6,7 +6,7 @@
 #include "../utils/is_acc_number_of_int.h"
 #include "../../utils/is_down_to_up.h"
 
-using namespace std;
+;using namespace std;
 
 int down_to_up_test()
 {

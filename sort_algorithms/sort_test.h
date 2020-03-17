@@ -11,6 +11,7 @@
 #include "../sort_algorithms/shell/shell.h"
 #include "../sort_algorithms/quick/quick.h"
 #include "../sort_algorithms/bubble/bubble.h"
+#include "../sort_algorithms/heap/heap.h"
 
 using namespace std;
 
@@ -76,6 +77,11 @@ int sort_test()
     int* bubble_orig = copy_array(bubble_in, 100);
     if (test_algorithm(bubble_in, bubble_orig, bubble_sort(bubble_in, 100), 100))
         return 1;
+    // cout << "> Heap sort" << endl;
+    // int* heap_in = random_list(100);
+    // int* heap_orig = copy_array(heap_in, 100);
+    // if (test_algorithm(heap_in, heap_orig, heap_sort(heap_in, 100), 100))
+        // return 1;
 
     return 0;
 };

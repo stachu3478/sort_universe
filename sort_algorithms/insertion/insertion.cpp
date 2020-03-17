@@ -1,3 +1,8 @@
+#include "insertion.h"
+#include "../../utils/is_down_to_up.h"
+#include <iostream>
+
+using namespace std;
 // Created for shell sort purposes
 // TODO make decrementing check for shell sort
 int* insertion_sort(int* arr, int length, int skips)
@@ -13,22 +18,18 @@ int* insertion_sort(int* arr, int length, int skips)
             {
                 next_pos = j + skips;
                 break;
-            } else
-            {
-                to_replace = 1;
-            }
+            };
+            to_replace = 1;
         };
         if (to_replace)
         {
-            for (int j = i; j > next_pos;)
-            {
-                arr[j] = arr[j -= skips];
-            };
+            for (int j = i; j > next_pos; j -= skips)
+                arr[j] = arr[j - skips]; // TODO optimize
             arr[next_pos] = tmp;
         };
     };
     return arr;
-}
+};
 
 // This insertion sort has no binary searching implemented
 int* insertion_sort(int* arr, int length)

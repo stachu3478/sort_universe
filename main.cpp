@@ -11,4 +11,4 @@ int main()
         return test;
     cout << "Hello world!" << endl;
     return 0;
-}
+};

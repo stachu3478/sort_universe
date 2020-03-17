@@ -4,7 +4,7 @@
 int* up_to_down(int length, int faces)
 {
     int elements_per_face = length / faces;
-    int elements_per_last = length % faces;
+    // int elements_per_last = length % faces;
     int rand_step = (INT_MAX / elements_per_face);
 
     int* arr = new int[length];

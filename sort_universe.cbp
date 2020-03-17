@@ -68,6 +68,8 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="sort_algorithms/bubble/bubble.cpp" />
 		<Unit filename="sort_algorithms/bubble/bubble.h" />
+		<Unit filename="sort_algorithms/heap/heap.cpp" />
+		<Unit filename="sort_algorithms/heap/heap.h" />
 		<Unit filename="sort_algorithms/insertion/insertion.cpp" />
 		<Unit filename="sort_algorithms/insertion/insertion.h" />
 		<Unit filename="sort_algorithms/quick/quick.cpp" />
@@ -88,6 +90,7 @@
 		<Unit filename="utils/copy_array.h">
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="utils/is_down_to_up.cpp" />
 		<Unit filename="utils/is_down_to_up.h">
 			<Option target="Debug" />
 		</Unit>
