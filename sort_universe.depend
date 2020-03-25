@@ -3,7 +3,7 @@
 	<stdlib.h>
 	<cstdio>
 
-1584469490 source:c:\users\stach\desktop\repo\sort_universe\main.cpp
+1584994888 source:c:\users\stach\desktop\repo\sort_universe\main.cpp
 	<iostream>
 	"test_suite.h"
 	"utils/measure.h"
@@ -212,7 +212,7 @@
 	"../utils/is_acc_number_of_int.h"
 	"../../utils/is_down_to_up.h"
 
-1584478462 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\sort_test.h
+1584991164 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\sort_test.h
 	<iostream>
 	"../array_generators/random/random.h"
 	"../utils/is_down_to_up.h"
@@ -229,13 +229,13 @@
 
 1583417069 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\selection\selection.h
 
-1583495616 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\insertion\insertion.h
+1584990856 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\insertion\insertion.h
 
 1583484716 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\shell\shell.h
 
 1583417069 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\selection\selection.cpp
 
-1584268360 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\insertion\insertion.cpp
+1584994813 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\insertion\insertion.cpp
 	"insertion.h"
 	"../../utils/is_down_to_up.h"
 	<iostream>
@@ -243,11 +243,12 @@
 1584268433 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\shell\shell.cpp
 	"../insertion/insertion.h"
 
-1584469354 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\quick\quick.h
+1584969460 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\quick\quick.h
 
-1584469533 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\quick\quick.cpp
+1584976140 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\quick\quick.cpp
 	<stdlib.h>
 	<cstdio>
+	<iostream>
 
 1583512196 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\bubble\bubble.h
 
@@ -255,7 +256,7 @@
 
 1584478352 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\heap\heap.h
 
-1584486351 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\heap\heap.cpp
+1585090789 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\heap\heap.cpp
 	<iostream>
 	"heap.h"
 

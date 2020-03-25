@@ -64,6 +64,9 @@ int sort_test()
     cout << "> Insertion sort" << endl;
     if (test_algorithm(insertion_sort))
         return 1;
+    cout << "> Insertion sort corrected" << endl;
+    if (test_algorithm(insertion_sort_s))
+        return 1;
     cout << "> Shell sort | Knuth" << endl;
     if (test_algorithm(shell_sort))
         return 1;
@@ -72,6 +75,12 @@ int sort_test()
         return 1;
     cout << "> Quick sort | Random pivot" << endl;
     if (test_algorithm(quick_sort_rand))
+        return 1;
+    cout << "> Quick sort corrected | Right pivot" << endl;
+    if (test_algorithm(quick_sort_right_c))
+        return 1;
+    cout << "> Quick sort corrected | Random pivot" << endl;
+    if (test_algorithm(quick_sort_rand_c))
         return 1;
     cout << "> Bubble sort" << endl;
     if (test_algorithm(bubble_sort))

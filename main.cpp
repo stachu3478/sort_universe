@@ -29,6 +29,9 @@ int main()
         << "5. Quick | Random pivot\n"
         << "6. Heap\n"
         << "7. Bubble\n"
+        << "8. Quick | Right pivot corrected\n"
+        << "9. Quick | Random pivot corrected\n"
+        << "10. Insertion sort corrected\n"
         << "0. Exit\n";
         cin >> alg_type;
 
@@ -41,7 +44,10 @@ int main()
             case 5: measure(quick_sort_rand); break;
             case 6: measure(heap_sort); break;
             case 7: measure(bubble_sort); break;
-            default: return 0;
+            case 8: measure(quick_sort_right_c); break;
+            case 9: measure(quick_sort_rand_c); break;
+            case 10: measure(insertion_sort_s); break;
+            default: return alg_type;
         };
     };
 

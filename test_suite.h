@@ -10,6 +10,7 @@
 #include "array_generators/a_shaped/a_shaped_test.h"
 #include "array_generators/v_shaped/v_shaped_test.h"
 #include "sort_algorithms/sort_test.h"
+#include "tree_utils/BSTNode_test.h"
 
 using namespace std;
 
@@ -36,6 +37,7 @@ int test_suite()
         checkFail(result, result += a_shaped_test());
         checkFail(result, result += v_shaped_test());
         checkFail(result, result += sort_test());
+        checkFail(result, result += BSTNode_test());
     }
     catch (...) {
         cout << "FAIL" << endl;

@@ -31,8 +31,30 @@ int* insertion_sort(int* arr, int length, int skips)
     return arr;
 };
 
+int* insertion_sort_s(int* arr, int length, int skips)
+{
+    for (int i = skips; i < length; i += skips)
+    {
+        int j = i;
+        int tmp = arr[j];
+        for (int j = i - skips; j >= 0; j -= skips)
+        {
+            if (arr[j] < arr[j + 1]) break;
+            tmp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = tmp;
+        };
+    };
+    return arr;
+};
+
 // This insertion sort has no binary searching implemented
 int* insertion_sort(int* arr, int length)
 {
     return insertion_sort(arr, length, 1);
+};
+
+int* insertion_sort_s(int* arr, int length)
+{
+    return insertion_sort_s(arr, length, 1);
 };

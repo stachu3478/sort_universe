@@ -3,20 +3,9 @@
 
 using namespace std;
 
-int left_child(int i)
-{
-    return (i + 1) * 2 - 1;
-};
-
-int right_child(int i)
-{
-    return (i + 1) * 2;
-};
-
-int parent(int i)
-{
-    return (i - 1) / 2;
-};
+int left_child(int i) { return (i + 1) * 2 - 1; };
+int right_child(int i) { return (i + 1) * 2; };
+int parent(int i) { return (i - 1) / 2; };
 
 void swapp(int* arr, int a, int b)
 {
