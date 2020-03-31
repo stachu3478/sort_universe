@@ -94,6 +94,8 @@
 		<Unit filename="tree_utils/BSTNode_test.h">
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="tree_utils/NodeApp.cpp" />
+		<Unit filename="tree_utils/NodeApp.h" />
 		<Unit filename="utils/copy_array.h">
 			<Option target="Debug" />
 		</Unit>

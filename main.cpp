@@ -8,6 +8,7 @@
 #include "sort_algorithms/quick/quick.h"
 #include "sort_algorithms/heap/heap.h"
 #include "sort_algorithms/bubble/bubble.h"
+#include "tree_utils/NodeApp.h"
 
 using namespace std;
 
@@ -17,6 +18,8 @@ int main()
     int test;
     if ((test = test_suite()))
         return test;
+
+    NodeApp();
 
     while (1)
     {

@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1583417069 source:c:\users\stach\desktop\repo\sort_universe\array_generators\random\random.cpp
+1583420669 source:c:\users\stach\desktop\repo\sort_universe\array_generators\random\random.cpp
 	<stdlib.h>
 	<cstdio>
 
-1584994888 source:c:\users\stach\desktop\repo\sort_universe\main.cpp
+1585687063 source:c:\users\stach\desktop\repo\sort_universe\main.cpp
 	<iostream>
 	"test_suite.h"
 	"utils/measure.h"
@@ -13,10 +13,11 @@
 	"sort_algorithms/quick/quick.h"
 	"sort_algorithms/heap/heap.h"
 	"sort_algorithms/bubble/bubble.h"
+	"tree_utils/NodeApp.h"
 
-1583351499 source:c:\users\stach\desktop\repo\sort_universe\test_suite.cpp
+1583355099 source:c:\users\stach\desktop\repo\sort_universe\test_suite.cpp
 
-1584265261 c:\users\stach\desktop\repo\sort_universe\test_suite.h
+1585174364 c:\users\stach\desktop\repo\sort_universe\test_suite.h
 	<iostream>
 	<stdlib.h>
 	"array_generators/random/random_test.h"
@@ -26,27 +27,28 @@
 	"array_generators/a_shaped/a_shaped_test.h"
 	"array_generators/v_shaped/v_shaped_test.h"
 	"sort_algorithms/sort_test.h"
+	"tree_utils/BSTNode_test.h"
 
-1583417069 c:\users\stach\desktop\repo\sort_universe\array_generators\random\random_test.h
+1583420669 c:\users\stach\desktop\repo\sort_universe\array_generators\random\random_test.h
 	<iostream>
 	"random.h"
 	"../utils/is_acc_number_of_int.h"
 
-1583350275 c:\users\stach\desktop\repo\sort_universe\array_generators\random\random.h
+1583353875 c:\users\stach\desktop\repo\sort_universe\array_generators\random\random.h
 
-1583417069 c:\users\stach\desktop\repo\sort_universe\array_generators\utils\is_acc_number_of_int.h
+1583420669 c:\users\stach\desktop\repo\sort_universe\array_generators\utils\is_acc_number_of_int.h
 
-1584444345 source:c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up.cpp
+1584447945 source:c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up.cpp
 	<bits/stdc++.h>
 	"down_to_up.h"
 
-1584448487 c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up_test.h
+1584452087 c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up_test.h
 	<iostream>
 	"down_to_up.h"
 	"../utils/is_acc_number_of_int.h"
 	"../../utils/is_down_to_up.h"
 
-1584444361 c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up.h
+1584447961 c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up.h
 
 1583406286 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\random\random.cpp
 	<stdlib.h>
@@ -162,57 +164,57 @@
 
 1583410322 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\sort_algorithms\insertion\insertion.cpp
 
-1584446487 source:c:\users\stach\desktop\repo\sort_universe\array_generators\a_shaped\a_shaped.cpp
+1584450087 source:c:\users\stach\desktop\repo\sort_universe\array_generators\a_shaped\a_shaped.cpp
 	"a_shaped.h"
 	"../down_to_up/down_to_up.h"
 	"../up_to_down/up_to_down.h"
 
-1583417069 c:\users\stach\desktop\repo\sort_universe\array_generators\a_shaped\a_shaped.h
+1583420669 c:\users\stach\desktop\repo\sort_universe\array_generators\a_shaped\a_shaped.h
 
-1584444357 c:\users\stach\desktop\repo\sort_universe\array_generators\up_to_down\up_to_down.h
+1584447957 c:\users\stach\desktop\repo\sort_universe\array_generators\up_to_down\up_to_down.h
 
-1583417069 source:c:\users\stach\desktop\repo\sort_universe\array_generators\single_value\single_value.cpp
+1583420669 source:c:\users\stach\desktop\repo\sort_universe\array_generators\single_value\single_value.cpp
 	<bits/stdc++.h>
 	"single_value.h"
 
-1583417069 c:\users\stach\desktop\repo\sort_universe\array_generators\single_value\single_value.h
+1583420669 c:\users\stach\desktop\repo\sort_universe\array_generators\single_value\single_value.h
 
-1584448425 source:c:\users\stach\desktop\repo\sort_universe\array_generators\up_to_down\up_to_down.cpp
+1584452025 source:c:\users\stach\desktop\repo\sort_universe\array_generators\up_to_down\up_to_down.cpp
 	<bits/stdc++.h>
 	"up_to_down.h"
 
-1583417069 source:c:\users\stach\desktop\repo\sort_universe\array_generators\v_shaped\v_shaped.cpp
+1583420669 source:c:\users\stach\desktop\repo\sort_universe\array_generators\v_shaped\v_shaped.cpp
 	"v_shaped.h"
 	"../down_to_up/down_to_up.h"
 	"../up_to_down/up_to_down.h"
 
-1584444130 c:\users\stach\desktop\repo\sort_universe\array_generators\v_shaped\v_shaped.h
+1584447730 c:\users\stach\desktop\repo\sort_universe\array_generators\v_shaped\v_shaped.h
 
-1584267147 c:\users\stach\desktop\repo\sort_universe\utils\is_down_to_up.h
+1584270747 c:\users\stach\desktop\repo\sort_universe\utils\is_down_to_up.h
 
-1584448500 c:\users\stach\desktop\repo\sort_universe\array_generators\up_to_down\up_to_down_test.h
+1584452100 c:\users\stach\desktop\repo\sort_universe\array_generators\up_to_down\up_to_down_test.h
 	<iostream>
 	"up_to_down.h"
 	"../utils/is_acc_number_of_int.h"
 
-1583417069 c:\users\stach\desktop\repo\sort_universe\array_generators\single_value\single_value_test.h
+1583420669 c:\users\stach\desktop\repo\sort_universe\array_generators\single_value\single_value_test.h
 	<iostream>
 	"single_value.h"
 	"../utils/is_acc_number_of_int.h"
 
-1583417069 c:\users\stach\desktop\repo\sort_universe\array_generators\a_shaped\a_shaped_test.h
+1583420669 c:\users\stach\desktop\repo\sort_universe\array_generators\a_shaped\a_shaped_test.h
 	<iostream>
 	"a_shaped.h"
 	"../utils/is_acc_number_of_int.h"
 	"../../utils/is_down_to_up.h"
 
-1583417069 c:\users\stach\desktop\repo\sort_universe\array_generators\v_shaped\v_shaped_test.h
+1583420669 c:\users\stach\desktop\repo\sort_universe\array_generators\v_shaped\v_shaped_test.h
 	<iostream>
 	"v_shaped.h"
 	"../utils/is_acc_number_of_int.h"
 	"../../utils/is_down_to_up.h"
 
-1584991164 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\sort_test.h
+1584994764 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\sort_test.h
 	<iostream>
 	"../array_generators/random/random.h"
 	"../utils/is_down_to_up.h"
@@ -225,46 +227,46 @@
 	"../sort_algorithms/bubble/bubble.h"
 	"../sort_algorithms/heap/heap.h"
 
-1583417069 c:\users\stach\desktop\repo\sort_universe\utils\copy_array.h
+1583420669 c:\users\stach\desktop\repo\sort_universe\utils\copy_array.h
 
-1583417069 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\selection\selection.h
+1583420669 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\selection\selection.h
 
-1584990856 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\insertion\insertion.h
+1584994456 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\insertion\insertion.h
 
-1583484716 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\shell\shell.h
+1583488316 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\shell\shell.h
 
-1583417069 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\selection\selection.cpp
+1583420669 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\selection\selection.cpp
 
-1584994813 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\insertion\insertion.cpp
+1585095381 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\insertion\insertion.cpp
 	"insertion.h"
 	"../../utils/is_down_to_up.h"
 	<iostream>
 
-1584268433 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\shell\shell.cpp
+1584272033 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\shell\shell.cpp
 	"../insertion/insertion.h"
 
-1584969460 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\quick\quick.h
+1585258372 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\quick\quick.h
 
-1584976140 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\quick\quick.cpp
+1585258295 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\quick\quick.cpp
 	<stdlib.h>
 	<cstdio>
 	<iostream>
 
-1583512196 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\bubble\bubble.h
+1583515796 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\bubble\bubble.h
 
-1583513091 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\bubble\bubble.cpp
+1583516691 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\bubble\bubble.cpp
 
-1584478352 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\heap\heap.h
+1584481952 c:\users\stach\desktop\repo\sort_universe\sort_algorithms\heap\heap.h
 
-1585090789 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\heap\heap.cpp
+1585094389 source:c:\users\stach\desktop\repo\sort_universe\sort_algorithms\heap\heap.cpp
 	<iostream>
 	"heap.h"
 
-1584266656 source:c:\users\stach\desktop\repo\sort_universe\utils\is_down_to_up.cpp
+1584270256 source:c:\users\stach\desktop\repo\sort_universe\utils\is_down_to_up.cpp
 	"is_down_to_up.h"
 	<iostream>
 
-1584447786 source:c:\users\stach\desktop\repo\sort_universe\utils\measure.cpp
+1584451386 source:c:\users\stach\desktop\repo\sort_universe\utils\measure.cpp
 	<iostream>
 	<iomanip>
 	<time.h>
@@ -276,5 +278,35 @@
 	"../array_generators/a_shaped/a_shaped.h"
 	"measure.h"
 
-1584442160 c:\users\stach\desktop\repo\sort_universe\utils\measure.h
+1584445760 c:\users\stach\desktop\repo\sort_universe\utils\measure.h
+
+1585686996 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode_test.h
+	<bits/stdc++.h>
+	<iostream>
+	<stdlib.h>
+	<cstdio>
+	"BSTNode.h"
+	"../array_generators/random/random.h"
+	"../sort_algorithms/bubble/bubble.h"
+	"../array_generators/down_to_up/down_to_up.h"
+
+1585675080 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.h
+
+1585687223 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.cpp
+	<iostream>
+	<stdlib.h>
+	<cstdio>
+	"BSTNode.h"
+
+1585687696 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\nodeapp.cpp
+	<iostream>
+	<iomanip>
+	<time.h>
+	"NodeApp.h"
+	"BSTNode.h"
+	"../array_generators/down_to_up/down_to_up.h"
+	"../array_generators/random/random.h"
+	"../utils/is_down_to_up.h"
+
+1585675460 c:\users\stach\desktop\repo\sort_universe\tree_utils\nodeapp.h
 

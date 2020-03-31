@@ -12,19 +12,19 @@ class BSTNode
         /** Default destructor */
         virtual ~BSTNode();
 
+        void _insert(int val);
         void setValue(int val) { this->value = val; };
-        int getValue() { this->value; };
+        int getValue() { return this->value; };
         void setLeftChild(BSTNode* val) { this->leftChild = val; };
         void setRightChild(BSTNode* val) { this->rightChild = val; };
         BSTNode* getLeftChild() { return this->leftChild; };
         BSTNode* getRightChild() { return this->rightChild; };
         int getHeight();
 
-        bool opeator==(BSTNode* val) { return this->value == val->value; };
-        bool opeator>(BSTNode* val) { return this->value > val->value; };
-        bool opeator<(BSTNode* val) { return this->value < val->value; };
-        bool opeator>=(BSTNode* val) { return this->value >= val->value; };
-        bool opeator<=(BSTNode* val) { return this->value <= val->value; };
+        bool operator>(BSTNode* val) { return this->value > val->value; };
+        bool operator<(BSTNode* val) { return this->value < val->value; };
+        bool operator>=(BSTNode* val) { return this->value >= val->value; };
+        bool operator<=(BSTNode* val) { return this->value <= val->value; };
 
         void preOrderVerbose();
         void inOrderVerbose();
@@ -38,12 +38,10 @@ class BSTNode
         BSTNode* findChild(int targetValue);
         BSTNode* removeChild(int targetValue);
 
-        BSTNode* nearestLower() { return this->leftChild->getHighest(); };
-        BSTNode* nearestHigher() { return this->rightChild->getLeast(); };
-        void rotateLeft();
-        void rotateRight();
+        BSTNode* rotateLeft();
+        BSTNode* rotateRight();
 
-        void flatten();
+        BSTNode* flatten();
 
     protected:
 

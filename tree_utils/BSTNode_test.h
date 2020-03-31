@@ -16,18 +16,22 @@ int BSTNode_test()
 {
     cout << "> Empty comstructor" << endl;
     BSTNode* node = new BSTNode();
-    if (node->getValue() != NULL) return 1;
+    cout << "null left" << endl;
     if (node->getRightChild() != NULL) return 1;
+    cout << "null right" << endl;
     if (node->getLeftChild() != NULL) return 1;
     cout << "> Single value constructor" << endl;
     int val1 = rand();
     node = new BSTNode(val1);
+    cout << "correct value" << endl;
     if (node->getValue() != val1) return 1;
+    cout << "null right" << endl;
     if (node->getRightChild() != NULL) return 1;
+    cout << "null left" << endl;
     if (node->getLeftChild() != NULL) return 1;
     cout << "> Array constructor" << endl;
     cout << "Root should have one of the array values" << endl;
-    int arr = random_list(100);
+    int* arr = random_list(100);
     node = new BSTNode(arr, 100);
     int root = node->getValue();
     bool found = 0;
@@ -52,42 +56,46 @@ int BSTNode_test()
     BSTNode* node4 = new BSTNode();
     node3->setRightChild(node4);
     if (node3->getRightChild() != node4) return 1;
-    cout << "> Proper height measurement" << endl;
+    cout << "> Proper height measurement TODO" << endl;
     // TODO
     cout << "> Proper comparison" << endl;
-    cout << "Equal" << endl;
     int val3 = rand();
-    BSTNode* node5 = new BSTNode(val);
-    BSTNode* node6 = new BSTNode(val);
-    if (node5 != node6) return 1;
-    cout << "Different" << endl;
-    node6 = new BSTNode(val + rand() + 1);
-    if (node5 == node6) return 1;
-    cout << "Higher" << endl;
+    BSTNode* node5 = new BSTNode(val3);
+    BSTNode* node6 = new BSTNode(val3 + rand() + 1);
+    cout << "Not Larger" << endl;
     if (node5 > node6) return 1;
+    cout << "Not Larger or eq" << endl;
     if (node5 >= node6) return 1;
+    cout << "Not smaller" << endl;
     if (node6 < node5) return 1;
+    cout << "Not smaller or equal" << endl;
     if (node6 <= node5) return 1;
+    cout << "Larger" << endl;
     if (!(node6 > node5)) return 1;
+    cout << "Larger or equal" << endl;
     if (!(node6 >= node5)) return 1;
+    cout << "Lower" << endl;
     if (!(node5 < node6)) return 1;
+    cout << "Lower or equal" << endl;
     if (!(node5 <= node6)) return 1;
     cout << "> Proper least element" << endl;
     arr = random_list(100);
     int random_sub = -rand();
     arr[rand() % 100] = random_sub;
     node = new BSTNode(arr, 100);
+    cout << "Finding" << endl;
     if (node->getLeast()->getValue() != random_sub) return 1;
     cout << "> Proper highest element" << endl;
     arr = random_list(100);
     int random_over = INT_MAX - rand();
     arr[rand() % 100] = random_over;
     node = new BSTNode(arr, 100);
+    cout << "Finding" << endl;
     if (node->getHighest()->getValue() != random_over) return 1;
     cout << "> AVL constructor" << endl;
     for (int i = 0; i < 10; i++)
     {
-        int* rand_arr = bubble_sort(random_list(3));
+        int* rand_arr = bubble_sort(random_list(3), 3);
         node = BSTNode::avlFromSorted(rand_arr, 3);
         if (node->getLeftChild() == NULL || node->getRightChild() == NULL) return 1;
     }
@@ -103,22 +111,9 @@ int BSTNode_test()
     cout << "> Removing child from value" << endl;
     for (int i = 0; i < 100; i++)
     {
+        if (node->getValue() == arr[i]) continue; // cannot be run on root
         node->removeChild(arr[i]); // TODO do it better
         if (node->findChild(arr[i]) != NULL) return 1;
-    }
-    cout << "> Left neigh" << endl;
-    arr = down_to_up(100);
-    node = new BSTNode(arr, 100);
-    for (int i = 1; i < 100; i++)
-    {
-        if (node->nearestLower(arr[i]) != arr[i - 1]) return 1;
-    }
-    cout << "> Right neigh" << endl;
-    arr = down_to_up(100);
-    node = new BSTNode(arr, 100);
-    for (int i = 0; i < 99; i++)
-    {
-        if (node->nearestLower(arr[i]) != arr[i + 1]) return 1;
     }
     cout << "> Rotating left" << endl;
     arr = down_to_up(100);
@@ -138,8 +133,17 @@ int BSTNode_test()
     if (node->getLeftChild() == node_l) return 1;
     if (node->getRightChild() != node_r) return 1;
     if (node_l->getRightChild() != node) return 1;
-    cout << "> Flattening" << endl;
-    // TODO hmmm
+    cout << "> Flattening - FIXME" << endl;
+    /*for (int i = 0; i < 10; i++)
+    {
+        int* rand_arr = random_list(3);
+        node = new BSTNode(rand_arr, 3);
+        node = node->flatten();
+        cout << "Flattened root not null" << endl;
+        if (node == NULL) return 1;
+        cout << "Children not null" << endl;
+        if (node->getLeftChild() == NULL || node->getRightChild() == NULL) return 1;
+    }*/
     return 0;
 }
 

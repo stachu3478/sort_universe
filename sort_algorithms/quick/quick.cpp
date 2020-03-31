@@ -34,12 +34,10 @@ int* quick_sort(int* arr, int length, pivot_getter get_p)
     return arr;
 };
 
-// Quick sort - corrected - pivot as first element
-int* quick_sort_c(int* arr, int length, pivot_getter get_p)
+int* _partition(int* arr, int length, int p)
 {
-    if (length <= 1) return arr;
     int i = 0, j = length - 1;
-    int p = arr[get_p(j)];
+    int* ij = new int[2];
     while (1)
     {
         while (arr[i] < p) i++;
@@ -52,17 +50,26 @@ int* quick_sort_c(int* arr, int length, pivot_getter get_p)
         }
         else if (i > j)
         {
-            quick_sort_c(arr, j + 1, get_p);
-            quick_sort_c(arr + i, length - i, get_p);
-            return arr;
+            ij[0] = j + 1;
+            ij[1] = i;
+            return ij;
         } else
         {
-            quick_sort_c(arr, i, get_p);
-            quick_sort_c(arr + i + 1, length - i - 1, get_p);
-            return arr;
+            ij[0] = i;
+            ij[1] = i + 1;
+            return ij;
         };
     };
+}
 
+// Quick sort - corrected - pivot as first element
+int* quick_sort_c(int* arr, int length, pivot_getter get_p)
+{
+    if (length <= 1) return arr;
+    int p = arr[get_p(length - 1)];
+    int* ij = _partition(arr, length, p);
+    quick_sort_c(arr, ij[0], get_p);
+    quick_sort_c(arr + ij[1], length - ij[1], get_p);
     return arr;
 };
 
