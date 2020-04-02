@@ -37,15 +37,20 @@ void BSTNode::_insert(int val) // not tested
             this->leftChild = target;
     }
     else
-        return target->_insert(val);
-    this->height = target->getHeight() + 1;
+        target->_insert(val);
+    if (this->height <= target->getHeight())
+        this->height = target->getHeight() + 1;
     this->height_present = 1;
 }
 
 BSTNode::BSTNode(int* arr, int length)
 {
     if (length > 0)
+    {
         this->value = arr[0];
+        this->height = 1;
+        this->height_present = 1;
+    }
     for (int i = 1; i < length; i++)
         this->_insert(arr[i]);
 }

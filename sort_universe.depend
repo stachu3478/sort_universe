@@ -280,7 +280,7 @@
 
 1584445760 c:\users\stach\desktop\repo\sort_universe\utils\measure.h
 
-1585686996 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode_test.h
+1585844514 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode_test.h
 	<bits/stdc++.h>
 	<iostream>
 	<stdlib.h>
@@ -292,13 +292,13 @@
 
 1585675080 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.h
 
-1585687223 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.cpp
+1585688535 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdio>
 	"BSTNode.h"
 
-1585687696 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\nodeapp.cpp
+1585688314 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\nodeapp.cpp
 	<iostream>
 	<iomanip>
 	<time.h>

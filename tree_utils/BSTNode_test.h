@@ -56,8 +56,19 @@ int BSTNode_test()
     BSTNode* node4 = new BSTNode();
     node3->setRightChild(node4);
     if (node3->getRightChild() != node4) return 1;
-    cout << "> Proper height measurement TODO" << endl;
-    // TODO
+    cout << "> Proper height measurement" << endl;
+    cout << "Minimal height treshold" << endl;
+    for (int i = 1, m = 1; i < 10; i++, m += m + 1)
+    {
+        node = new BSTNode(random_list(m), m);
+        if (node->getHeight() < i) return 1;
+    }
+    cout << "Maximum height treshold" << endl;
+    for (int i = 1, m = 1; i < 10; i++, m += m + 1)
+    {
+        node = new BSTNode(random_list(m), m);
+        if (node->getHeight() > m) return 1;
+    }
     cout << "> Proper comparison" << endl;
     int val3 = rand();
     BSTNode* node5 = new BSTNode(val3);
