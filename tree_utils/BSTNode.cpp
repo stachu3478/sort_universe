@@ -45,6 +45,8 @@ void BSTNode::_insert(int val) // not tested
 
 BSTNode::BSTNode(int* arr, int length)
 {
+    this->leftChild = NULL;
+    this->rightChild = NULL;
     if (length > 0)
     {
         this->value = arr[0];
@@ -75,13 +77,14 @@ BSTNode* BSTNode::avlFromSorted(int* arr, int length)
     else height = rightHeight;
     root->height = height;
     root->height_present = 1;
+    return root;
 }
 
 int BSTNode::getHeight()
 {
     if (this->height_present)
         return this->height;
-    return NULL;
+    return 0;
 }
 
 void BSTNode::preOrderVerbose()
@@ -123,8 +126,15 @@ BSTNode* BSTNode::getHighest(bool verbose)
     return this;
 }
 
-BSTNode* BSTNode::findChild(int targetValue)
+BSTNode* BSTNode::findChild(int targetValue, bool parent)
 {
+    if (parent)
+    {
+        if (
+            (this->rightChild != NULL && this->rightChild->getValue() == targetValue)
+            || (this->leftChild != NULL && this->leftChild->getValue() == targetValue)
+        ) return this;
+    }
     if (targetValue < this->value)
     {
         if (this->leftChild != NULL)
@@ -136,7 +146,14 @@ BSTNode* BSTNode::findChild(int targetValue)
             return this->rightChild->findChild(targetValue);
         return NULL;
     }
-    return this;
+    if (!parent)
+        return this;
+    return NULL;
+}
+
+BSTNode* BSTNode::findChild(int targetValue)
+{
+    return findChild(targetValue, 0);
 }
 
 BSTNode* BSTNode::removeChild(int targetValue)
@@ -217,40 +234,33 @@ BSTNode* BSTNode::rotateRight()
     return left;
 }
 
+BSTNode* BSTNode::linify()
+{
+    BSTNode* newRoot = this->rotateRight();
+    while (newRoot->getLeftChild() != NULL)
+        newRoot = newRoot->rotateRight();
+    if (newRoot->rightChild != NULL)
+    {
+        newRoot->rightChild = newRoot->rightChild->linify();
+        newRoot->height = newRoot->rightChild->height + 1;
+    }
+    else
+        newRoot->height = 1;
+    return newRoot;
+}
+
 BSTNode* BSTNode::flatten()
 {
-    BSTNode* currentRoot = this;
-    BSTNode* topRoot = this;
-    bool isTop = 1;
-    int length = 1;
-    while (1)
-    {
-        BSTNode* newRoot = currentRoot->rotateRight();
-        if (newRoot == currentRoot)
-        {
-            if (isTop)
-            {
-                isTop = 0;
-                topRoot = currentRoot;
-            };
-            newRoot = currentRoot->rightChild;
-            if (newRoot == NULL)
-                break;
-            length++;
-        };
-        currentRoot = newRoot;
-    };
+    BSTNode* topRoot = this->linify();
+    int length = topRoot->height;
     int sizeNeeded = 2;
     while (length > sizeNeeded)
     {
         topRoot = topRoot->rotateLeft();
-        currentRoot = topRoot;
+        BSTNode* currentRoot = topRoot;
         while (currentRoot->rightChild != NULL)
-        {
-            currentRoot = currentRoot->rightChild;
-            currentRoot = currentRoot->rotateLeft();
-        };
-        sizeNeeded <<= 1;
+            currentRoot = currentRoot->rightChild->rotateLeft();
+        sizeNeeded *= 2;
     }
     return topRoot;
 }

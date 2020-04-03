@@ -30,7 +30,6 @@ int BSTNode_test()
     cout << "null left" << endl;
     if (node->getLeftChild() != NULL) return 1;
     cout << "> Array constructor" << endl;
-    cout << "Root should have one of the array values" << endl;
     int* arr = random_list(100);
     node = new BSTNode(arr, 100);
     int root = node->getValue();
@@ -38,6 +37,7 @@ int BSTNode_test()
     for (int i = 0; i < 100; i++)
         if (root == arr[i])
             found = 1;
+    cout << "Root should have one of the array values" << endl;
     if (!found) return 1;
     cout << "Should have at least one child" << endl;
     if (node->getLeftChild() == NULL && node->getRightChild() == NULL) return 1;
@@ -69,26 +69,6 @@ int BSTNode_test()
         node = new BSTNode(random_list(m), m);
         if (node->getHeight() > m) return 1;
     }
-    cout << "> Proper comparison" << endl;
-    int val3 = rand();
-    BSTNode* node5 = new BSTNode(val3);
-    BSTNode* node6 = new BSTNode(val3 + rand() + 1);
-    cout << "Not Larger" << endl;
-    if (node5 > node6) return 1;
-    cout << "Not Larger or eq" << endl;
-    if (node5 >= node6) return 1;
-    cout << "Not smaller" << endl;
-    if (node6 < node5) return 1;
-    cout << "Not smaller or equal" << endl;
-    if (node6 <= node5) return 1;
-    cout << "Larger" << endl;
-    if (!(node6 > node5)) return 1;
-    cout << "Larger or equal" << endl;
-    if (!(node6 >= node5)) return 1;
-    cout << "Lower" << endl;
-    if (!(node5 < node6)) return 1;
-    cout << "Lower or equal" << endl;
-    if (!(node5 <= node6)) return 1;
     cout << "> Proper least element" << endl;
     arr = random_list(100);
     int random_sub = -rand();
@@ -127,7 +107,7 @@ int BSTNode_test()
         if (node->findChild(arr[i]) != NULL) return 1;
     }
     cout << "> Rotating left" << endl;
-    arr = down_to_up(100);
+    arr = down_to_up(100, 1, 1);
     node = BSTNode::avlFromSorted(arr, 100);
     BSTNode* node_l = node->getLeftChild();
     BSTNode* node_r = node->getRightChild();
@@ -136,7 +116,7 @@ int BSTNode_test()
     if (node->getRightChild() == node_r) return 1;
     if (node_r->getLeftChild() != node) return 1;
     cout << "> Rotating right" << endl;
-    arr = down_to_up(100);
+    arr = down_to_up(100, 1, 1);
     node = BSTNode::avlFromSorted(arr, 100);
     node_l = node->getLeftChild();
     node_r = node->getRightChild();
@@ -144,8 +124,26 @@ int BSTNode_test()
     if (node->getLeftChild() == node_l) return 1;
     if (node->getRightChild() != node_r) return 1;
     if (node_l->getRightChild() != node) return 1;
+    cout << "> Linifying" << endl;
+    node = new BSTNode(random_list(100), 100);
+    node = node->linify();
+    cout << "Proper height" << endl;
+    cout << node->getHeight() << endl;
+    if (node->getHeight() != 100) return 1;
+    cout << "Correct structure" << endl;
+    for (int i = 0; i < 99; i++)
+    {
+        cout << "Has't left child" << endl;
+        if (node->getLeftChild() != NULL) return 1;
+        cout << "Has right child" << endl;
+        if (node->getRightChild() == NULL) return 1;
+        node = node->getRightChild();
+    }
+    cout << "Leaf" << endl;
+    if (node->getLeftChild() != NULL || node->getRightChild() != NULL) return 1;
     cout << "> Flattening - FIXME" << endl;
-    /*for (int i = 0; i < 10; i++)
+    cout << "2 lvl flatten" << endl;
+    for (int i = 0; i < 10; i++)
     {
         int* rand_arr = random_list(3);
         node = new BSTNode(rand_arr, 3);
@@ -154,7 +152,16 @@ int BSTNode_test()
         if (node == NULL) return 1;
         cout << "Children not null" << endl;
         if (node->getLeftChild() == NULL || node->getRightChild() == NULL) return 1;
-    }*/
+    }
+    cout << "All nodes are present" << endl;
+    arr = random_list(100);
+    node = new BSTNode(arr, 100);
+    node = node->flatten();
+    for (int i = 0; i < 100; i++)
+    {
+        cout << "Id " << i << " " << arr[i] << endl;
+        if (node->findChild(arr[i]) != NULL) return 1;
+    }
     return 0;
 }
 

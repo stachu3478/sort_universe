@@ -92,10 +92,7 @@ bool checkRoot(BSTNode* root)
 
 void fastMeasure(measured_algorithm alg)
 {
-    int instanceType = 0,
-        baseSize = 1,
-        threshold = 100,
-        delta = 10,
+    int baseSize = 1,
         measurements = 10;
     MyClock* clk = new MyClock();
 
@@ -147,20 +144,24 @@ void buildBST(int s, MyClock* c)
     delete root;
 }
 
+// x1 000 000
 void findLeastAVL(int s, MyClock* c)
 {
     BSTNode* root = BSTNode::avlFromSorted(down_to_up(s), s);
     c->start();
-    root->getLeast();
+    for (int i = 0; i < 1000000; i++)
+        root->getLeast();
     c->stop();
     delete root;
 }
 
+// x1 000 000
 void findLeastBST(int s, MyClock* c)
 {
     BSTNode* root = new BSTNode(random_list(s), s);
     c->start();
-    root->getLeast();
+    for (int i = 0; i < 1000000; i++)
+        root->getLeast();
     c->stop();
     delete root;
 }
@@ -212,8 +213,8 @@ NodeApp::NodeApp()
         << "11. Flatten tree through rotations\n"
         << "12. AVL building time measurement\n"
         << "13. BST building time measurement\n"
-        << "14. Finding least element in AVL time measurement\n"
-        << "15. Finding least element in BST time measurement\n"
+        << "14. Finding least element in AVL time measurement x1 000 000\n"
+        << "15. Finding least element in BST time measurement x1 000 000\n"
         << "16. Output from AVL in-order measurement\n"
         << "17. Output from BST in-order measurement\n"
         << "18. BST tree flattening time measurement\n"
@@ -223,51 +224,51 @@ NodeApp::NodeApp()
         switch (alg_type)
         {
             case 1:
-                {
+            {
                     int length = safeReadLength();
                     root = BSTNode::avlFromSorted(down_to_up(length), length);
                     cout << "[i] Height: " << root->getHeight() << endl;
-                }
+            }
                 break;
             case 2:
-                {
+            {
                     int length = safeReadLength();
-                    root = BSTNode::avlFromSorted(type_array(length), length);
+                    root = BSTNode::avlFromSorted(typeSafeDownToUpArray(length), length);
                     cout << "[i] Height: " << root->getHeight() << endl;
-                }
+            }
                 break;
             case 3:
-                {
+            {
                     int length = safeReadLength();
-                    root = new BSTNode(down_to_up(length), length);
+                    root = new BSTNode(random_list(length), length);
                     cout << "[i] Height: " << root->getHeight() << endl;
-                }
+            }
                 break;
             case 4:
-                {
+            {
                     int length = safeReadLength();
                     root = new BSTNode(type_array(length), length);
                     cout << "[i] Height: " << root->getHeight() << endl;
-                }
+            }
                 break;
             case 5:
-                {
+            {
                     if (checkRoot(root)) break;
                 cout << "<root> ";
-                BSTNode* found = root->getLeast(true);
-                cout << "\b <end>\n";
-                }
+                root->getLeast(true);
+                cout << "        \r <end>\n";
+            }
                 break;
             case 6:
-                {
+            {
                     if (checkRoot(root)) break;
                 cout << "<root> ";
-                BSTNode* found = root->getHighest(true);
-                cout << "\b <end>\n";
-                }
+                root->getHighest(true);
+                cout << "         \r <end>\n";
+            }
                 break;
             case 7:
-                {
+            {
                     if (checkRoot(root)) break;
                 cout << "Asking for array of elements to be removed.\n";
                 int length = safeReadLength();
@@ -294,33 +295,33 @@ NodeApp::NodeApp()
                     else
                         cout << "[i] Node not found. Value: " << arr[i] << endl;
                 };
-                }
+            }
                 break;
             case 8:
-                {
+            {
                     if (checkRoot(root)) break;
                 cout << "<root> ";
                 root->preOrderVerbose();
-                cout << "\b <end>\n";
-                }
+                cout << "         \r <end>\n";
+            }
                 break;
             case 9:
-                {
+            {
                     if (checkRoot(root)) break;
                 cout << "<root> ";
                 root->inOrderVerbose();
-                cout << "\b <end>\n";
-                }
+                cout << "         \r <end>\n";
+            }
                 break;
             case 10:
-                {
+            {
                     if (checkRoot(root)) break;
                 delete root;
                 cout << "[i] The root node has been removed. Don't try to compute it in the future.\n";
-                }
+            }
                 break;
             case 11:
-                {
+            {
                     if (checkRoot(root)) break;
                 BSTNode* newRoot = root->flatten();
                 cout << "[i] Root node has been flattened\n";
@@ -328,7 +329,8 @@ NodeApp::NodeApp()
                     cout << "[i] The root node has not changed\n";
                 else
                     cout << "[i] The root node has changed\n";
-                }
+                root = newRoot;
+            }
                 break;
             case 12: fastMeasure(buildAVL); break;
             case 13: fastMeasure(buildBST); break;

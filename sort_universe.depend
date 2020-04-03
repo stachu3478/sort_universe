@@ -38,7 +38,7 @@
 
 1583420669 c:\users\stach\desktop\repo\sort_universe\array_generators\utils\is_acc_number_of_int.h
 
-1584447945 source:c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up.cpp
+1585944335 source:c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up.cpp
 	<bits/stdc++.h>
 	"down_to_up.h"
 
@@ -48,7 +48,7 @@
 	"../utils/is_acc_number_of_int.h"
 	"../../utils/is_down_to_up.h"
 
-1584447961 c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up.h
+1585944267 c:\users\stach\desktop\repo\sort_universe\array_generators\down_to_up\down_to_up.h
 
 1583406286 source:c:\users\stach\onedrive\pulpit\repo\sort_universe\array_generators\random\random.cpp
 	<stdlib.h>
@@ -280,7 +280,7 @@
 
 1584445760 c:\users\stach\desktop\repo\sort_universe\utils\measure.h
 
-1585844514 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode_test.h
+1585945875 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode_test.h
 	<bits/stdc++.h>
 	<iostream>
 	<stdlib.h>
@@ -290,15 +290,15 @@
 	"../sort_algorithms/bubble/bubble.h"
 	"../array_generators/down_to_up/down_to_up.h"
 
-1585675080 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.h
+1585943865 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.h
 
-1585688535 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.cpp
+1585945815 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdio>
 	"BSTNode.h"
 
-1585688314 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\nodeapp.cpp
+1585945340 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\nodeapp.cpp
 	<iostream>
 	<iomanip>
 	<time.h>

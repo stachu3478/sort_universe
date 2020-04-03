@@ -21,11 +21,6 @@ class BSTNode
         BSTNode* getRightChild() { return this->rightChild; };
         int getHeight();
 
-        bool operator>(BSTNode* val) { return this->value > val->value; };
-        bool operator<(BSTNode* val) { return this->value < val->value; };
-        bool operator>=(BSTNode* val) { return this->value >= val->value; };
-        bool operator<=(BSTNode* val) { return this->value <= val->value; };
-
         void preOrderVerbose();
         void inOrderVerbose();
         void postOrderVerbose();
@@ -36,11 +31,13 @@ class BSTNode
         BSTNode* getHighest() { return this->getHighest(false); };
 
         BSTNode* findChild(int targetValue);
+        BSTNode* findChild(int targetValue, bool parent);
         BSTNode* removeChild(int targetValue);
 
         BSTNode* rotateLeft();
         BSTNode* rotateRight();
 
+        BSTNode* linify();
         BSTNode* flatten();
 
     protected:
