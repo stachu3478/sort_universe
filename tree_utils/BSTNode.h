@@ -38,6 +38,7 @@ class BSTNode
         BSTNode* rotateRight();
 
         BSTNode* linify();
+        BSTNode* compressionCycle(int skips);
         BSTNode* flatten();
 
     protected:

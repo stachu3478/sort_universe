@@ -300,7 +300,7 @@ NodeApp::NodeApp()
             case 8:
             {
                     if (checkRoot(root)) break;
-                cout << "<root> ";
+                cout << "<start> ";
                 root->preOrderVerbose();
                 cout << "         \r <end>\n";
             }

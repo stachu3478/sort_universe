@@ -280,7 +280,7 @@
 
 1584445760 c:\users\stach\desktop\repo\sort_universe\utils\measure.h
 
-1585945875 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode_test.h
+1586109943 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode_test.h
 	<bits/stdc++.h>
 	<iostream>
 	<stdlib.h>
@@ -290,15 +290,15 @@
 	"../sort_algorithms/bubble/bubble.h"
 	"../array_generators/down_to_up/down_to_up.h"
 
-1585943865 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.h
+1586107148 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.h
 
-1585945815 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.cpp
+1586109898 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdio>
 	"BSTNode.h"
 
-1585945340 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\nodeapp.cpp
+1586104313 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\nodeapp.cpp
 	<iostream>
 	<iomanip>
 	<time.h>

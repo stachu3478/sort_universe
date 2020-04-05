@@ -125,6 +125,7 @@ int BSTNode_test()
     if (node->getRightChild() != node_r) return 1;
     if (node_l->getRightChild() != node) return 1;
     cout << "> Linifying" << endl;
+    arr = random_list(100);
     node = new BSTNode(random_list(100), 100);
     node = node->linify();
     cout << "Proper height" << endl;
@@ -141,6 +142,45 @@ int BSTNode_test()
     }
     cout << "Leaf" << endl;
     if (node->getLeftChild() != NULL || node->getRightChild() != NULL) return 1;
+    cout << "All nodes are present" << endl;
+    for (int i = 0; i < 100; i++)
+    {
+        cout << "Id " << i << " " << arr[i] << endl;
+        if (node->findChild(arr[i]) != NULL) return 1;
+    }
+    cout << "> Compression cycle" << endl;
+    arr = random_list(100);
+    node = new BSTNode(random_list(100), 100);
+    node = node->linify()->compressionCycle(50);
+    cout << "Correct structure" << endl;
+    for (int i = 0; i < 49; i++)
+    {
+        cout << "Left child present" << endl;
+        BSTNode* sub = node->getLeftChild();
+        if (sub == NULL) return 1;
+        cout << "Left's children not present" << endl;
+        if (sub->getLeftChild() != NULL || sub->getRightChild() != NULL) return 1;
+        cout << "Has right child" << endl;
+        if (node->getRightChild() == NULL) return 1;
+        node = node->getRightChild();
+    }
+    cout << "Leaf" << endl;
+    if (node->getLeftChild() == NULL || node->getRightChild() != NULL) return 1;
+    cout << "All nodes are present" << endl;
+    arr = random_list(100);
+    node = new BSTNode(arr, 100);
+    node = node->linify()->compressionCycle(50);
+    int no = 0;
+    for (int i = 0; i < 100; i++)
+    {
+        cout << "Id " << i << " " << arr[i];
+        if (node->findChild(arr[i]) == NULL)
+        {
+            cout << " suck" << endl;
+            no++;
+        } else cout << endl;
+    }
+    if (no > 0) return 1;
     cout << "> Flattening - FIXME" << endl;
     cout << "2 lvl flatten" << endl;
     for (int i = 0; i < 10; i++)
@@ -159,9 +199,14 @@ int BSTNode_test()
     node = node->flatten();
     for (int i = 0; i < 100; i++)
     {
-        cout << "Id " << i << " " << arr[i] << endl;
-        if (node->findChild(arr[i]) != NULL) return 1;
+        cout << "Id " << i << " " << arr[i];
+        if (node->findChild(arr[i]) == NULL)
+        {
+            cout << " suck" << endl;
+            no++;
+        } else cout << endl;
     }
+    if (no > 0) return 1;
     return 0;
 }
 

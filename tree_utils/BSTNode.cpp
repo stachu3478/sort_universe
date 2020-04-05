@@ -249,18 +249,46 @@ BSTNode* BSTNode::linify()
     return newRoot;
 }
 
+BSTNode* BSTNode::compressionCycle(int skips)
+{
+    BSTNode* topRoot = this;
+    if (skips > 0)
+        topRoot = topRoot->rotateLeft();
+    BSTNode* currentRoot = topRoot;
+    BSTNode* prevRoot = topRoot;
+    for (int i = 1; i < skips; i++)
+    {
+        currentRoot = currentRoot->rightChild->rotateLeft();
+        prevRoot->rightChild = currentRoot;
+        prevRoot = currentRoot;
+    }
+    return topRoot;
+}
+
 BSTNode* BSTNode::flatten()
 {
     BSTNode* topRoot = this->linify();
     int length = topRoot->height;
     int sizeNeeded = 2;
-    while (length > sizeNeeded)
+    int a1 = length + 1;
+    int a2 = 0;
+    while (a1 > 1)
     {
-        topRoot = topRoot->rotateLeft();
-        BSTNode* currentRoot = topRoot;
-        while (currentRoot->rightChild != NULL)
-            currentRoot = currentRoot->rightChild->rotateLeft();
-        sizeNeeded *= 2;
+        a1 /= 2;
+        a2++;
+    }
+    while (a2 > 0)
+    {
+        a1 *= 2;
+        a2--;
+    }
+    int a3 = a1 - 1;
+    topRoot = topRoot->compressionCycle(length - a3);
+    while (a3 > 1)
+    {
+        cout << a3 << endl;
+        a3 /= 2;
+        topRoot = topRoot->compressionCycle(a3);
     }
     return topRoot;
 }
