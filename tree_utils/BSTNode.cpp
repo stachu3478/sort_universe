@@ -270,25 +270,13 @@ BSTNode* BSTNode::flatten()
     BSTNode* topRoot = this->linify();
     int length = topRoot->height;
     int sizeNeeded = 2;
-    int a1 = length + 1;
-    int a2 = 0;
+    int a1 = length / 2 + 1;
+    while (a1 != (a1 = (a1 | (a1 >> 1))));
+    topRoot = topRoot->compressionCycle(length - a1);
     while (a1 > 1)
     {
         a1 /= 2;
-        a2++;
-    }
-    while (a2 > 0)
-    {
-        a1 *= 2;
-        a2--;
-    }
-    int a3 = a1 - 1;
-    topRoot = topRoot->compressionCycle(length - a3);
-    while (a3 > 1)
-    {
-        cout << a3 << endl;
-        a3 /= 2;
-        topRoot = topRoot->compressionCycle(a3);
+        topRoot = topRoot->compressionCycle(a1);
     }
     return topRoot;
 }
