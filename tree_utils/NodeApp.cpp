@@ -147,7 +147,7 @@ void buildBST(int s, MyClock* c)
 // x1 000 000
 void findLeastAVL(int s, MyClock* c)
 {
-    BSTNode* root = BSTNode::avlFromSorted(down_to_up(s), s);
+    BSTNode* root = BSTNode::avlFromSorted(down_to_up(s, 1, 1), s);
     c->start();
     for (int i = 0; i < 1000000; i++)
         root->getLeast();
@@ -166,20 +166,24 @@ void findLeastBST(int s, MyClock* c)
     delete root;
 }
 
+// x100
 void verboseAVL(int s, MyClock* c)
 {
     BSTNode* root = BSTNode::avlFromSorted(down_to_up(s), s);
     c->start();
-    root->inOrderVerbose();
+    for (int i = 0; i < 100; i++)
+        root->inOrderCycle();
     c->stop();
     delete root;
 }
 
+// x100
 void verboseBST(int s, MyClock* c)
 {
     BSTNode* root = new BSTNode(random_list(s), s);
     c->start();
-    root->inOrderVerbose();
+    for (int i = 0; i < 100; i++)
+        root->inOrderCycle();
     c->stop();
     delete root;
 }
@@ -215,8 +219,8 @@ NodeApp::NodeApp()
         << "13. BST building time measurement\n"
         << "14. Finding least element in AVL time measurement x1 000 000\n"
         << "15. Finding least element in BST time measurement x1 000 000\n"
-        << "16. Output from AVL in-order measurement\n"
-        << "17. Output from BST in-order measurement\n"
+        << "16. Output from AVL in-order measurement x100\n"
+        << "17. Output from BST in-order measurement x100\n"
         << "18. BST tree flattening time measurement\n"
         << "0. Exit\n";
         cin >> alg_type;
@@ -226,7 +230,7 @@ NodeApp::NodeApp()
             case 1:
             {
                     int length = safeReadLength();
-                    root = BSTNode::avlFromSorted(down_to_up(length), length);
+                    root = BSTNode::avlFromSorted(down_to_up(length, 1, 1), length);
                     cout << "[i] Height: " << root->getHeight() << endl;
             }
                 break;
@@ -254,17 +258,17 @@ NodeApp::NodeApp()
             case 5:
             {
                     if (checkRoot(root)) break;
-                cout << "<root> ";
+                cout << "<root>\n";
                 root->getLeast(true);
-                cout << "        \r <end>\n";
+                cout << " <end>\n";
             }
                 break;
             case 6:
             {
                     if (checkRoot(root)) break;
-                cout << "<root> ";
+                cout << "<root>\n";
                 root->getHighest(true);
-                cout << "         \r <end>\n";
+                cout <<  " <end>\n";
             }
                 break;
             case 7:
@@ -300,17 +304,17 @@ NodeApp::NodeApp()
             case 8:
             {
                     if (checkRoot(root)) break;
-                cout << "<start> ";
+                cout << "<start>\n";
                 root->preOrderVerbose();
-                cout << "         \r <end>\n";
+                cout << " <end>\n";
             }
                 break;
             case 9:
             {
                     if (checkRoot(root)) break;
-                cout << "<root> ";
+                cout << "<root>\n";
                 root->inOrderVerbose();
-                cout << "         \r <end>\n";
+                cout << " <end>\n";
             }
                 break;
             case 10:

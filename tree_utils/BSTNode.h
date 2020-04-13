@@ -24,6 +24,9 @@ class BSTNode
         void preOrderVerbose();
         void inOrderVerbose();
         void postOrderVerbose();
+        void preOrderCycle();
+        void inOrderCycle();
+        void postOrderCycle();
         // TODO wypisanie sciezki poszukiwania
         BSTNode* getLeast(bool verbose);
         BSTNode* getLeast() { return this->getLeast(false); };

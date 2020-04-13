@@ -5,6 +5,8 @@
 
 using namespace std;
 
+void skip(auto a){};
+
 BSTNode::BSTNode()
 {
     this->leftChild = NULL;
@@ -50,7 +52,7 @@ BSTNode::BSTNode(int* arr, int length)
     if (length > 0)
     {
         this->value = arr[0];
-        this->height = 1;
+        this->height = 0;
         this->height_present = 1;
     }
     for (int i = 1; i < length; i++)
@@ -60,18 +62,18 @@ BSTNode::BSTNode(int* arr, int length)
 BSTNode* BSTNode::avlFromSorted(int* arr, int length)
 {
     int mid = length / 2;
-    int height, leftHeight = 1, rightHeight = 1;
+    int height, leftHeight = 0, rightHeight = 0;
     BSTNode* root = new BSTNode(arr[mid]);
     if (mid > 0)
     {
         root->leftChild = BSTNode::avlFromSorted(arr, mid);
         leftHeight += root->leftChild->getHeight();
-    }
+    } else root->leftChild = NULL;
     if (length - mid - 1 > 0)
     {
         root->rightChild = BSTNode::avlFromSorted(arr + mid + 1, length - mid - 1);
         rightHeight += root->rightChild->getHeight();
-    }
+    } else root->rightChild = NULL;
     if (leftHeight > rightHeight)
         height = leftHeight;
     else height = rightHeight;
@@ -107,6 +109,29 @@ void BSTNode::postOrderVerbose()
     if (this->rightChild != NULL) this->rightChild->postOrderVerbose();
     cout << this->value << endl;
 }
+
+void BSTNode::preOrderCycle()
+{
+    skip(this->value);
+    if (this->leftChild != NULL) this->leftChild->preOrderCycle();
+    if (this->rightChild != NULL) this->rightChild->preOrderCycle();
+}
+
+void BSTNode::inOrderCycle()
+{
+    if (this->leftChild != NULL) this->leftChild->inOrderCycle();
+    skip(this->value);
+    if (this->rightChild != NULL) this->rightChild->inOrderCycle();
+}
+
+void BSTNode::postOrderCycle()
+{
+    if (this->leftChild != NULL) this->leftChild->postOrderCycle();
+    if (this->rightChild != NULL) this->rightChild->postOrderCycle();
+    this->value;
+}
+
+
 
 BSTNode* BSTNode::getLeast(bool verbose)
 {
@@ -158,60 +183,23 @@ BSTNode* BSTNode::findChild(int targetValue)
 
 BSTNode* BSTNode::removeChild(int targetValue)
 {
-    BSTNode* parent = NULL;
-    BSTNode* child = this;
-    BSTNode* removedChild = this;
-    int choiceState = 0;
-    while (1)
-    {
-        if (targetValue < child->value)
-        {
-            if (child->leftChild != NULL)
-            {
-                parent = child;
-                child = child->leftChild;
-                choiceState = -1;
-            }
-            else return NULL;
-        } else if (targetValue > child->value)
-        {
-            if (child->rightChild != NULL)
-            {
-                parent = child;
-                child = child->rightChild;
-                choiceState = 1;
-            }
-            else return NULL;
-        } else break;
-    }
-    bool leftOrRight = rand() % 2;
-    BSTNode* first;
-    BSTNode* second;
-    removedChild = child;
-    if (leftOrRight)
-    {
-        first = child->leftChild;
-        second = child->rightChild;
-    } else
-    {
-        first = child->rightChild;
-        second = child->leftChild;
-    }
-    if (first != NULL)
-    {
-        child = first;
-    } else if (second != NULL)
-    {
-        child = second;
-    } else child = NULL;
-    if (choiceState == 1)
-    {
-        parent->rightChild = child;
-    } else if (choiceState == -1)
-    {
-        parent->leftChild = child;
-    }
-    return removedChild;
+    BSTNode* parent = this->findChild(targetValue, 1);
+    BSTNode* removed;
+    if (parent == NULL) return NULL;
+    if (parent->leftChild != NULL && parent->leftChild->value == targetValue)
+        removed = parent->leftChild;
+    else
+        removed = parent->rightChild;
+    while (removed->rightChild)
+        parent = removed->rotateLeft();
+    while (removed->leftChild)
+        parent = removed->rotateRight();
+    if (removed->rightChild || removed->leftChild)
+        cout << "Still sucks" << endl;
+    if (parent->rightChild != removed)
+        cout << "Sucks even more" << endl;
+    delete parent->rightChild;
+    return removed;
 }
 
 BSTNode* BSTNode::rotateLeft()
@@ -271,7 +259,10 @@ BSTNode* BSTNode::flatten()
     int length = topRoot->height;
     int sizeNeeded = 2;
     int a1 = length / 2 + 1;
-    while (a1 != (a1 = (a1 | (a1 >> 1))));
+    while (a1 != (a1 | (a1 >> 1)))
+    {
+        a1 |= a1 >> 1;
+    };
     topRoot = topRoot->compressionCycle(length - a1);
     while (a1 > 1)
     {

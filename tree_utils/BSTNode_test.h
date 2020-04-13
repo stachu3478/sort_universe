@@ -61,7 +61,7 @@ int BSTNode_test()
     for (int i = 1, m = 1; i < 10; i++, m += m + 1)
     {
         node = new BSTNode(random_list(m), m);
-        if (node->getHeight() < i) return 1;
+        if (node->getHeight() < i - 1) return 1;
     }
     cout << "Maximum height treshold" << endl;
     for (int i = 1, m = 1; i < 10; i++, m += m + 1)
@@ -130,7 +130,7 @@ int BSTNode_test()
     node = node->linify();
     cout << "Proper height" << endl;
     cout << node->getHeight() << endl;
-    if (node->getHeight() != 100) return 1;
+    if (node->getHeight() != 99) return 1;
     cout << "Correct structure" << endl;
     for (int i = 0; i < 99; i++)
     {
