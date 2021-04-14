@@ -2,6 +2,8 @@
 #include "test_suite.h"
 #include "utils/measure.h"
 
+#include "knapsack_utils.h"
+
 #include "sort_algorithms/selection/selection.h"
 #include "sort_algorithms/insertion/insertion.h"
 #include "sort_algorithms/shell/shell.h"
@@ -19,7 +21,9 @@ int main()
     if ((test = test_suite()))
         return test;
 
-    NodeApp();
+    // NodeApp();
+    // node_app2();
+    knapsack_app();
 
     while (1)
     {

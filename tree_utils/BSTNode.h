@@ -33,6 +33,7 @@ class BSTNode
         BSTNode* getHighest(bool verbose);
         BSTNode* getHighest() { return this->getHighest(false); };
 
+        BSTNode* findParent(int targetValue);
         BSTNode* findChild(int targetValue);
         BSTNode* findChild(int targetValue, bool parent);
         BSTNode* removeChild(int targetValue);

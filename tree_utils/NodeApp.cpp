@@ -7,6 +7,7 @@
 #include "../array_generators/down_to_up/down_to_up.h"
 #include "../array_generators/random/random.h"
 #include "../utils/is_down_to_up.h"
+#include "../read_utils.h"
 
 using namespace std;
 
@@ -33,52 +34,6 @@ class MyClock
 };
 
 typedef void measured_algorithm(int val, MyClock* s);
-
-int safeReadInteger()
-{
-    int value;
-    while (!(cin >> value))
-    {
-        cout << "Failed to read a number, try again.\n";
-        cin.clear();
-        cin.ignore();
-    }
-    return value;
-}
-
-int safeReadLength()
-{
-    cout << "Type length of the array\n";
-    int length = safeReadInteger();
-    while (length < 1)
-    {
-        cout << "Length should be positive, try again.\n";
-        length = safeReadInteger();
-    };
-    return length;
-}
-
-int* type_array(int length)
-{
-	int* arr = new int[length];
-	for (int i = 0; i < length; i++)
-	{
-		cout << "Give " << i << ". element" << endl;
-		arr[i] = safeReadInteger();
-	};
-	return arr;
-}
-
-int* typeSafeDownToUpArray(int length)
-{
-    int* arr = type_array(length);
-    while (!is_down_to_up(arr, length))
-    {
-        cout << "The array is not sorted properly. Try again." << endl;
-        arr = type_array(length);
-    };
-    return arr;
-}
 
 bool checkRoot(BSTNode* root)
 {

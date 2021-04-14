@@ -99,13 +99,25 @@ int BSTNode_test()
         if (node->findChild(arr[i]) == NULL) return 1;
     }
     if (node->findChild(random_over) != NULL) return 1;
-    cout << "> Removing child from value" << endl;
+    /*cout << "Parents" << endl;
+    for (int i = 0; i < 100; i++)
+    {
+        cout << "NUULL parent" << endl;
+        BSTNode* par = node->findChild(arr[i], 1);
+        if (par == NULL && node->getValue() != arr[i]) return 1;
+        cout << "Valid child" << endl;
+        if ((par->getRightChild() == NULL || par->getRightChild()->getValue() != arr[i]) && (par->getLeftChild() == NULL || par->getLeftChild()->getValue() != arr[i])) return 1;
+    }*/
+    /*cout << "> Removing child from value" << endl; // FIXME
     for (int i = 0; i < 100; i++)
     {
         if (node->getValue() == arr[i]) continue; // cannot be run on root
-        node->removeChild(arr[i]); // TODO do it better
+        BSTNode* rem = node->removeChild(arr[i]); // TODO do it better
+        cout << "Proper removed" << endl;
+        if (rem->getValue() != arr[i]) return 1;
+        cout << "Not existing anymore" << endl;
         if (node->findChild(arr[i]) != NULL) return 1;
-    }
+    }*/
     cout << "> Rotating left" << endl;
     arr = down_to_up(100, 1, 1);
     node = BSTNode::avlFromSorted(arr, 100);

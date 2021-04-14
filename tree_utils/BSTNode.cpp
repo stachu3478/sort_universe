@@ -154,12 +154,12 @@ BSTNode* BSTNode::getHighest(bool verbose)
 BSTNode* BSTNode::findChild(int targetValue, bool parent)
 {
     if (parent)
-    {
-        if (
-            (this->rightChild != NULL && this->rightChild->getValue() == targetValue)
-            || (this->leftChild != NULL && this->leftChild->getValue() == targetValue)
-        ) return this;
-    }
+        return this->findParent(targetValue);
+    return this->findChild(targetValue);
+}
+
+BSTNode* BSTNode::findChild(int targetValue)
+{
     if (targetValue < this->value)
     {
         if (this->leftChild != NULL)
@@ -171,14 +171,27 @@ BSTNode* BSTNode::findChild(int targetValue, bool parent)
             return this->rightChild->findChild(targetValue);
         return NULL;
     }
-    if (!parent)
-        return this;
-    return NULL;
+    return this;
 }
 
-BSTNode* BSTNode::findChild(int targetValue)
+BSTNode* BSTNode::findParent(int targetValue)
 {
-    return findChild(targetValue, 0);
+    if (
+        (this->rightChild != NULL && this->rightChild->getValue() == targetValue)
+        || (this->leftChild != NULL && this->leftChild->getValue() == targetValue)
+    ) return this;
+    if (targetValue < this->value)
+    {
+        if (this->leftChild != NULL)
+            return this->leftChild->findChild(targetValue);
+        return NULL;
+    } else if (targetValue > this->value)
+    {
+        if (this->rightChild != NULL)
+            return this->rightChild->findChild(targetValue);
+        return NULL;
+    }
+    return NULL;
 }
 
 BSTNode* BSTNode::removeChild(int targetValue)
@@ -186,19 +199,33 @@ BSTNode* BSTNode::removeChild(int targetValue)
     BSTNode* parent = this->findChild(targetValue, 1);
     BSTNode* removed;
     if (parent == NULL) return NULL;
-    if (parent->leftChild != NULL && parent->leftChild->value == targetValue)
+    if (parent->leftChild != NULL && parent->leftChild->value == targetValue) {
         removed = parent->leftChild;
-    else
+        BSTNode* neigh = removed->getHighest();
+        if (neigh == removed)
+            parent->leftChild = NULL;
+        else
+            parent->leftChild = neigh;
+    } else
+    {
         removed = parent->rightChild;
-    while (removed->rightChild)
+        BSTNode* neigh = removed->getLeast();
+        if (neigh == removed)
+            parent->rightChild = NULL;
+        else
+            parent->rightChild = neigh;
+    }
+    /*while (removed->rightChild)
         parent = removed->rotateLeft();
     while (removed->leftChild)
-        parent = removed->rotateRight();
-    if (removed->rightChild || removed->leftChild)
-        cout << "Still sucks" << endl;
-    if (parent->rightChild != removed)
-        cout << "Sucks even more" << endl;
-    delete parent->rightChild;
+        parent = removed->rotateRight();*/
+    //if (removed->rightChild || removed->leftChild)
+    //    cout << "Still sucks" << endl;
+    //if (parent->rightChild != removed)
+    //    cout << "Sucks even more" << endl;
+    if (removed->value != targetValue)
+        cout << "If i suck, everybody sucks" << endl;
+    //parent->rightChild = NULL;
     return removed;
 }
 
@@ -227,13 +254,19 @@ BSTNode* BSTNode::linify()
     BSTNode* newRoot = this->rotateRight();
     while (newRoot->getLeftChild() != NULL)
         newRoot = newRoot->rotateRight();
-    if (newRoot->rightChild != NULL)
+    BSTNode* parRoot = newRoot;
+    BSTNode* childRoot = newRoot->rightChild;
+    int height = 0;
+    while (childRoot != NULL)
     {
-        newRoot->rightChild = newRoot->rightChild->linify();
-        newRoot->height = newRoot->rightChild->height + 1;
+        while (childRoot->leftChild != NULL)
+            childRoot = childRoot->rotateRight();
+        parRoot->rightChild = childRoot;
+        parRoot = childRoot;
+        childRoot = childRoot->rightChild;
+        height++;
     }
-    else
-        newRoot->height = 1;
+    newRoot->height = height;
     return newRoot;
 }
 
@@ -257,16 +290,13 @@ BSTNode* BSTNode::flatten()
 {
     BSTNode* topRoot = this->linify();
     int length = topRoot->height;
-    int sizeNeeded = 2;
-    int a1 = length / 2 + 1;
+    int a1 = (length >> 1) + 1;
     while (a1 != (a1 | (a1 >> 1)))
-    {
         a1 |= a1 >> 1;
-    };
     topRoot = topRoot->compressionCycle(length - a1);
     while (a1 > 1)
     {
-        a1 /= 2;
+        a1 >>= 1;
         topRoot = topRoot->compressionCycle(a1);
     }
     return topRoot;

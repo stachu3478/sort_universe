@@ -3,10 +3,11 @@
 	<stdlib.h>
 	<cstdio>
 
-1585687063 source:c:\users\stach\desktop\repo\sort_universe\main.cpp
+1590964594 source:c:\users\stach\desktop\repo\sort_universe\main.cpp
 	<iostream>
 	"test_suite.h"
 	"utils/measure.h"
+	"knapsack_utils.h"
 	"sort_algorithms/selection/selection.h"
 	"sort_algorithms/insertion/insertion.h"
 	"sort_algorithms/shell/shell.h"
@@ -17,7 +18,7 @@
 
 1583355099 source:c:\users\stach\desktop\repo\sort_universe\test_suite.cpp
 
-1585174364 c:\users\stach\desktop\repo\sort_universe\test_suite.h
+1587925900 c:\users\stach\desktop\repo\sort_universe\test_suite.h
 	<iostream>
 	<stdlib.h>
 	"array_generators/random/random_test.h"
@@ -28,6 +29,8 @@
 	"array_generators/v_shaped/v_shaped_test.h"
 	"sort_algorithms/sort_test.h"
 	"tree_utils/BSTNode_test.h"
+	"stack_test.h"
+	"queue_test.h"
 
 1583420669 c:\users\stach\desktop\repo\sort_universe\array_generators\random\random_test.h
 	<iostream>
@@ -266,7 +269,7 @@
 	"is_down_to_up.h"
 	<iostream>
 
-1584451386 source:c:\users\stach\desktop\repo\sort_universe\utils\measure.cpp
+1591104644 source:c:\users\stach\desktop\repo\sort_universe\utils\measure.cpp
 	<iostream>
 	<iomanip>
 	<time.h>
@@ -278,9 +281,9 @@
 	"../array_generators/a_shaped/a_shaped.h"
 	"measure.h"
 
-1584445760 c:\users\stach\desktop\repo\sort_universe\utils\measure.h
+1590972880 c:\users\stach\desktop\repo\sort_universe\utils\measure.h
 
-1586766970 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode_test.h
+1586901055 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode_test.h
 	<bits/stdc++.h>
 	<iostream>
 	<stdlib.h>
@@ -290,15 +293,15 @@
 	"../sort_algorithms/bubble/bubble.h"
 	"../array_generators/down_to_up/down_to_up.h"
 
-1586329510 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.h
+1587159290 c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.h
 
-1586766869 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.cpp
+1587159316 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\bstnode.cpp
 	<iostream>
 	<stdlib.h>
 	<cstdio>
 	"BSTNode.h"
 
-1586346507 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\nodeapp.cpp
+1587816926 source:c:\users\stach\desktop\repo\sort_universe\tree_utils\nodeapp.cpp
 	<iostream>
 	<iomanip>
 	<time.h>
@@ -307,6 +310,87 @@
 	"../array_generators/down_to_up/down_to_up.h"
 	"../array_generators/random/random.h"
 	"../utils/is_down_to_up.h"
+	"../read_utils.h"
 
 1585675460 c:\users\stach\desktop\repo\sort_universe\tree_utils\nodeapp.h
+
+1590270707 c:\users\stach\desktop\repo\sort_universe\node_utils.h
+	"Graph.h"
+	"read_utils.h"
+	<iostream>
+	"measure.h"
+
+1589674529 c:\users\stach\desktop\repo\sort_universe\node_utils\graph.h
+
+1587915050 c:\users\stach\desktop\repo\sort_universe\read_utils.h
+
+1590321091 source:c:\users\stach\desktop\repo\sort_universe\node_utils\graph.cpp
+	"Graph.h"
+	<iostream>
+	<iomanip>
+	<stdlib.h>
+	<cstdio>
+	"Stack.h"
+	"Queue.h"
+
+1587915119 source:c:\users\stach\desktop\repo\sort_universe\read_utils.cpp
+	"read_utils.h"
+	"utils/is_down_to_up.h"
+	<iostream>
+	<iomanip>
+
+1587914243 source:c:\users\stach\desktop\repo\sort_universe\node_utils\trueboolarray.cpp
+	"TrueBoolArray.h"
+	<cstddef>
+
+1587914202 c:\users\stach\desktop\repo\sort_universe\node_utils\trueboolarray.h
+
+1587918864 c:\users\stach\desktop\repo\sort_universe\utils\stack_test.h
+	<iostream>
+	"Stack.h"
+	"../array_generators/random/random.h"
+
+1589585143 c:\users\stach\desktop\repo\sort_universe\utils\stack.h
+	"Pair.h"
+
+1589584751 c:\users\stach\desktop\repo\sort_universe\utils\pair.h
+
+1587917940 source:c:\users\stach\desktop\repo\sort_universe\utils\pair.cpp
+	<cstddef>
+	"Pair.h"
+
+1589585127 source:c:\users\stach\desktop\repo\sort_universe\utils\stack.cpp
+	<cstddef>
+	"Stack.h"
+	"Pair.h"
+
+1587925888 c:\users\stach\desktop\repo\sort_universe\utils\queue_test.h
+	<iostream>
+	"Queue.h"
+	"../array_generators/random/random.h"
+
+1587925912 c:\users\stach\desktop\repo\sort_universe\utils\queue.h
+	"Pair.h"
+
+1587925920 source:c:\users\stach\desktop\repo\sort_universe\utils\queue.cpp
+	<cstddef>
+	"Queue.h"
+	"Pair.h"
+
+1591117181 source:c:\users\stach\desktop\repo\sort_universe\src\knapsacksolver.cpp
+	"KnapsackSolver.h"
+	<fstream>
+	<iostream>
+	<stdlib.h>
+	<cstdio>
+	<ctime>
+
+1591103083 c:\users\stach\desktop\repo\sort_universe\include\knapsacksolver.h
+	<iostream>
+
+1591116983 c:\users\stach\desktop\repo\sort_universe\knapsack_utils.h
+	"KnapsackSolver.h"
+	"read_utils.h"
+	<iostream>
+	"measure.h"
 

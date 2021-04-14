@@ -10,7 +10,7 @@
 #include "../array_generators/a_shaped/a_shaped.h"
 #include "measure.h"
 
-using namespace std;
+;using namespace std;
 
 typedef int* generator(int length);
 generator* pickGenerator(int id)
@@ -68,6 +68,57 @@ void measure(sort_algorithm alg)
             delete arr;
         };
         output_time = (double)sort_time / measurements;
+        cout << setw(10) << baseSize << setw(2) << "|" << setw(10) << output_time << endl;
+        baseSize += delta;
+    };
+};
+
+void basic_measure(algorithm alg, algorithm prepare)
+{
+    prepare(0);
+    int time = 0;
+    int ops = 0;
+    while (time == 0)
+    {
+        clock_t start = clock();
+        alg(0);
+        time = clock() - start;
+        ops++;
+    }
+    cout << setw(10) << 0 << setw(2) << "|" << setw(10) << time << " Elapsed: " << ops << endl;
+}
+
+void measure(algorithm alg, algorithm prepare)
+{
+    int baseSize = 1000,
+        threshold = 100,
+        delta = 100,
+        measurements = 10;
+    cout<< "Please type number of items per instance. (1000)\n";
+    cin >> baseSize;
+    cout<< "How many items should be added to instance after succesful measurement? (1000)\n";
+    cin >> delta;
+    cout<< "What should be timeout for sorting in miliseconds? (100)\n";
+    cin >> threshold;
+    cout<< "Please type number of measurements per instance size. (10)\n";
+    cin >> measurements;
+
+    cout << setw(10) << "Size" << setw(2) << "|" << setw(15) << "Average time (ms)\n";
+    cout << string(35, '-') << endl;
+
+    cout << fixed << setprecision(1);
+    double output_time = 0;
+    while (output_time < threshold)
+    {
+        int time = 0;
+        for (int n = 0; n < measurements; n++)
+        {
+            prepare(baseSize);
+            clock_t start = clock();
+            alg(baseSize);
+            time += clock() - start;
+        };
+        output_time = (double)time / measurements;
         cout << setw(10) << baseSize << setw(2) << "|" << setw(10) << output_time << endl;
         baseSize += delta;
     };
